@@ -27,7 +27,7 @@ def main():
     pickle_file.close()
 
     for line in lines: 
-        print line
+        print(line)
 
 
 def extract_riker_lines(season_num, filename): 
@@ -36,14 +36,12 @@ def extract_riker_lines(season_num, filename):
     body = f.read()
     body = body.replace('\n', '').replace('\r', '')
     matches = re.findall(r'<p> ' + character + r'<br>[ ]+(.*?)</p>', body)
-    for match in matches: 
-        line = {}
-        line['text'] = ' '.join(match.split())
-        line['text'] = re.sub(r'\(.*?\)', '', line['text'])
-        line['text'] = line['text'].replace('<br>', '').strip()
-        line['text'] = line['text'].replace('&quot;', '"')
-        line['episode'] = filename.replace('.htm', '')
-        line['word_count'] = len(line['text'].split())
+    for match in matches:
+        text = ' '.join(match.split())
+        text = re.sub(r'\(.*?\)', '', text)
+        text = text.replace('<br>', '').strip()
+        text = text.replace('&quot;', '"')
+        line = {'text': text, 'episode': filename.replace('.htm', ''), 'word_count': len(text).split()}
         lines.append(line)
     return lines 
 
