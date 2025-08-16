@@ -78,11 +78,16 @@ class ImpossibleSentenceError(Exception):
 
 def main():
     parser = argparse.ArgumentParser(description='Print Riker quotes.')
+    parser.add_argument("-s", "--sentence", action="store_true", help="Generate a single sentence (the default).")
+    parser.add_argument("-p", "--paragraph", action="store_true", help="Generate a paragraph.")
     parser.add_argument('-c', '--count', dest='count', type=int,
-                        help='minimum number of words in the sentence')
+                        help='Minimum count of words (for a sentence) or sentences (for a paragraph) to generate.')
 
     args = parser.parse_args()
-    print(generate_sentence(args.count))
+    if args.paragraph:
+        print(generate_paragraph(args.count))
+    else:
+        print(generate_sentence(args.count))
 
 
 if __name__ == '__main__':
