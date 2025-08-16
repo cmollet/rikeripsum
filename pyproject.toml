@@ -14,7 +14,7 @@ dev = [
 ]
 
 [project.urls]
-Source = "https://github.com/cmollet/sridentify"
+Source = "https://github.com/cmollet/rikeripsum"
 
 [build-system]
 requires = ["setuptools", "setuptools-scm"]
