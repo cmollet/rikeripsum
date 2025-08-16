@@ -1,0 +1,24 @@
+[project]
+name = "rikeripsum"
+dynamic = ["version"]
+description = ""
+keywords = []
+readme = "README.md"
+license = { text = "MIT"}
+maintainers = []
+classifiers = []  # https://pypi.org/classifiers/
+
+[project.optional-dependencies]
+dev = [
+    "build",
+]
+
+[project.urls]
+Source = "https://github.com/cmollet/sridentify"
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+riker = "rikeripsum.rikeripsum:main"

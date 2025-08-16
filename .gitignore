@@ -11,3 +11,8 @@ MANIFEST
 *.pyc
 
 dist/RikerIpsum-1.1.tar.gz
+
+*.egg-info
+build
+dist
+
